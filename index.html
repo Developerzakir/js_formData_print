@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<title>Print Form Data</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+
+    <form method="post" action="" id="myfrm">
+       
+            <label>Personal information:</label><br>
+            First name:<br>
+            <input type="text" name="firstname">
+            <br> Last name:<br>
+            <input type="text" name="lastname">
+            <br><br>
+            <input type="submit" value="Submit">
+        
+    </form>
+
+    <p align="center"><input type="button" onclick="myPrint('myfrm')" value="print"></p>
+    <script>
+        function myPrint(myfrm) {
+            var printdata = document.getElementById(myfrm);
+            newwin = window.open("");
+            newwin.document.write(printdata.outerHTML);
+            newwin.print();
+            newwin.close();
+        }
+    </script>
+</body>
+</html>
